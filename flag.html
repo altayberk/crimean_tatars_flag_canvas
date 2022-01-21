@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Crimean Tatars Flag</title>
+</head>
+<body>
+    <div>
+        <input type="range" id="flagsize" name="flagsize" min="0" max="1000" value="500" step="10">
+        <label id="flaglabel" for="flagsize">100</label>
+    </div>
+    <canvas id="canvas">
+        This text is displayed if your browser does not support HTML5 Canvas.
+    </canvas>
+    <script>
+        var range = document.getElementById('flagsize');
+        var output = document.getElementById('flaglabel');
+        var my_canvas = document.getElementById('canvas')
+        TatarFlag(my_canvas);
+        range.oninput = function () {
+            output.innerHTML = this.value
+            TatarFlag(my_canvas, this.value);
+        };
+
+        function TatarFlag(canvas, H = 500) {
+            var a = H / 20
+
+            canvas.height = a * 20;
+            canvas.width = a * 30;
+            ctx = my_canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00a3dd';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(4 * a, 3 * a, 7 * a, a);
+            ctx.fill();
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(7 * a, 4 * a, a, 3 * a);
+            ctx.fill();
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(6 * a, 7 * a, 3 * a, a);
+            ctx.fill();
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(4 * a, 4 * a, a, 2 * a);
+            ctx.fill();
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(10 * a, 4 * a, a, 2 * a);
+            ctx.fill();
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(3 * a, 6 * a, 2 * a, a);
+            ctx.fill();
+
+            ctx.fillStyle = "#f8d80e";
+            ctx.beginPath();
+            ctx.fillRect(10 * a, 6 * a, 2 * a, a);
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>
