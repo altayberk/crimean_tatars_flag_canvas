@@ -6,8 +6,8 @@
 </head>
 <body>
     <div>
-        <input type="range" id="flagsize" name="flagsize" min="0" max="1000" value="500" step="10">
-        <label id="flaglabel" for="flagsize">100</label>
+        <input type="range" id="flagsize" name="flagsize" min="117" max="1170" value="117" step="117">
+        <label id="flaglabel" for="flagsize">117</label>
     </div>
     <canvas id="canvas">
         This text is displayed if your browser does not support HTML5 Canvas.
@@ -22,11 +22,11 @@
             TatarFlag(my_canvas, this.value);
         };
 
-        function TatarFlag(canvas, H = 500) {
-            var a = H / 20
+        function TatarFlag(canvas, H = 117) {
+            var a = H / 19.5
 
-            canvas.height = a * 20;
-            canvas.width = a * 30;
+            canvas.height = a * 19,5;
+            canvas.width = a * 29.25;
             ctx = my_canvas.getContext("2d");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = '#00a3dd';
